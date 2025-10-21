@@ -7,6 +7,43 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
+    <div class="container min-vh-100 align-content-center">
+
+        <form class=" bg-danger p-3 w-50 h-50" id="form">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Adresse Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            <div id="emailHelp" class="form-text">T'inquiète de rien ça reste entre nous</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" id="Password" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$" required>
+        <div class="invalid-feedback">
+      Please provide a valid city.
+    </div>  
+        </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Date de naissance</label>
+            <input type="date" class="form-control" id="dateNai">
+          </div>
+        
+          <button type="submit" class="btn  btn-outline-warning " id="btn">Connexion</button>
+        </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        let form = document.getElementById('form')
+        let btn = document.getElementById('btn')
+        
+        form.onsubmit = ()=>{
+            let today = new Date()
+            let dateNai = document.getElementById('dateNai')
+            let value = new Date(dateNai.value)
+          if(today>value){
+            alert("ok")
+          } else {alert("erreur")}
+        } 
+       
+    </script>
 </body>
 </html>
